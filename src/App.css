@@ -1,0 +1,106 @@
+
+
+.App {
+  justify-content: center;
+  text-align: center;
+  color: rgb(240, 71, 71);
+}
+.login {
+  color: rgb(255, 127, 127);
+}
+
+.header {
+  position: absolute;
+  background: linear-gradient(to bottom, #000000, transparent);
+  z-index: 2;
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+}
+
+.logo-img {
+  width: 150px;
+  margin: 20px;
+}
+
+.profile-icon{
+  width: 50px;
+  margin: 20px;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+}
+
+.logout-btn {
+   margin-right: 20px;
+   background-color: red;
+   color: white;
+   border: white;
+   font-weight: 400;
+   padding: 5px;
+   border-radius: 4px;
+   cursor: pointer;
+
+}
+
+.logout-btn:hover {
+  background-color: rgb(204, 56, 56);
+  transform: scale(1.2);
+
+}
+
+.bg-img {
+  position: absolute;
+}
+
+.sign-heading {
+  color: #ffffff;
+}
+
+.input {
+  color: #e9e4e4;
+  background: #363636;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 4px;
+  width: 90%;
+  border: #000000;
+}
+
+.sign-box {
+  position: absolute;
+  z-index: 1;
+  color: #000000;
+  background-color: rgba(0, 0, 0, 0.8); /* 50% transparent black */
+  margin: 10% auto;
+  padding: 30px;
+  right: 0;
+  left: 0;
+  width: 20%;
+}
+.form-box {
+  /* background:linear-gradient(135deg,#000000); */
+  margin: 10px;
+  /* padding: 10px; */
+  color: #ffffff;
+}
+
+.sign-btn {
+  background-color: rgb(160, 8, 8);
+  color: #ffffff;
+  padding: 10px;
+  margin: 10px 0;
+  width: 98%;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.errormessage {
+  color: red;
+}
+
+.singIn-switch {
+  cursor: pointer;
+}
