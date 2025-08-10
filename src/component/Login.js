@@ -23,7 +23,7 @@ const Login = () => {
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
-  console.log(email);
+  // console.log(email);
 
   const handleButtonClick = () => {
     const emailVal = email.current?.value.trim();
@@ -31,7 +31,7 @@ const Login = () => {
 
     const message = checkvalidation(emailVal, password.current.value);
     setErrormessage(message);
-    console.log(message);
+    // console.log(message);
 
     if (message) return;
 
