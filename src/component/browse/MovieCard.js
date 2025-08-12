@@ -3,9 +3,8 @@ import { IMG_URL } from '../../utilis/constants'
 
 const MovieCard = ({posterPath}) => {
   return (
-    <div className='poster-div'>
+    <div className='className="w-36 md:w-48 pr-4'>
       <img alt='moive-img'
-      className='poster-img'
       src={IMG_URL + posterPath}
       />
     </div>

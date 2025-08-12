@@ -4,14 +4,14 @@ const MovieList = ({ title, movies }) => {
     if (!movies) {
         return null;
     }
-    console.log(movies);
-    console.log(movies[0]);
+    // console.log(movies);
+    // console.log(movies[1]);
 
     return (
-        <div className="moviediv">
-            <h1 className="list-title">{title}</h1>
-            <div  className="movieslist">
-                <div className="moviecards">
+        <div className="px-6">
+            <h1 className="text-lg md:text-3xl py-4 text-white">{title}</h1>
+            <div  className="flex overflow-x-scroll scrollbar-hide">
+                <div className="flex">
                     {movies.map(movies => <MovieCard key={movies.id} posterPath={movies.poster_path} />)}
 
                 </div>

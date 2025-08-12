@@ -5,7 +5,7 @@ import { checkvalidation } from '../utilis/validate';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../utilis/firebase';
 import { useNavigate } from 'react-router-dom';
-import { profileicon } from '../utilis/constants';
+import { BG_URL, profileicon } from '../utilis/constants';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utilis/userslice';
 
@@ -95,9 +95,10 @@ const Login = () => {
   return (
     <div className='login '>
       <Header />
-      <div className='bg-img'>
+      <div className='bg-img absolute'>
         <img
-          src='https://assets.nflxext.com/ffe/siteui/vlv3/258d0f77-2241-4282-b613-8354a7675d1a/web/IN-en-20250721-TRIFECTA-perspective_cadc8408-df6e-4313-a05d-daa9dcac139f_medium.jpg'
+          className='object-cover'
+          src={BG_URL}  
           alt="background"
         />
       </div>
@@ -106,32 +107,32 @@ const Login = () => {
       <div className='sign-box'>
 
         <form onSubmit={(e) => e.preventDefault()}
-          className='form-box'>
-          <h1 className='sign-heading'>
+          className='form-box w-full md:w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80'>
+          <h1 className='sign-heading font-bold text-3xl py-4'>
             {isSignInForm ? "Sign in" : "Sign up"}
           </h1>
 
-          {!isSignInForm && <input ref={name} type='text' placeholder='Name' className='input' />}
+          {!isSignInForm && <input ref={name} type='text' placeholder='Name' className='p-4 my-4 w-full bg-gray-700' />}
 
           <input ref={email}
             type='text'
             placeholder='Email address'
-            className='input' />
+            className='p-4 my-4 w-full bg-gray-700' />
 
 
           <input ref={password}
             type='password'
             placeholder='Password'
-            className='input' />
+            className='p-4 my-4 w-full bg-gray-700' />
 
-          <button className='sign-btn'
+          <button className='sign-btn p-4 my-6 bg-red-700 w-full rounded-lg'
             onClick={handleButtonClick}>
             {isSignInForm ? "Sign in" : "Sign up"}
           </button>
 
-          <p className='errormessage'>{Errormessage}</p>
+          <p className='text-red-500 font-bold text-lg py-2'>{Errormessage}</p>
 
-          <p className='singIn-switch'
+          <p className='py-4 cursor-pointer'
             onClick={toggleSignInForms}
           >{isSignInForm ? "New to Netflix?Signup now" : "Already Sign up?.Sign in"}</p>
         </form>
