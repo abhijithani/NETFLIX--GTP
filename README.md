@@ -20,9 +20,18 @@ implement sign in up user
 -fetch data for Trailer video
 -upadate triler with store video
 -embedded the youtube video and make it autoplay and mute
-
 -Build secondary component
-
+-Build movie list
+-build movie card 
+-TMDB image CDN URL
+-Made the Browser page 
+-Gpt search page
+-Gpt search bar
+-Gpt search from gemini api key
+-fetched movies suggestion from TMDB
+-memoization = condition for useEffect with store
+-added api key to .env
+-made site responsive
 
 # features
 

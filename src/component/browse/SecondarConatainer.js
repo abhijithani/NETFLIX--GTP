@@ -12,7 +12,7 @@ const Secondarconatainer = () => {
     <div className="bg-black">
       <div className="mt-0 md:-mt-52 pl-4 md:pl-12 relative z-10">
       <MovieList title={"Now playing"} movies ={movies?.addNowPlayingMovies}/>
-      <MovieList title={"Upcoming Moviesr"} movies ={movies?.addPopularMovies}/>
+      <MovieList title={"Upcoming Movies"} movies ={movies?.addPopularMovies}/>
       <MovieList title={"Popular"} movies ={movies?.addNowPlayingMovies}/>
       <MovieList title={"Rated"} movies ={movies?.addPopularMovies}/>
       </div>

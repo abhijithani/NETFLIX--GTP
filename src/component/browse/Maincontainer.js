@@ -7,7 +7,7 @@ const Maincontainer = () => {
 
       if(!movies) return ;
 
-      const mainMovies = movies[6];
+      const mainMovies = movies[14];
       // console.log(mainMovies);
       
       const {original_title , overview,id} = mainMovies;

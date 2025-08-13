@@ -56,14 +56,14 @@ const Header = () => {
     <div className='header absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between'>
       <div>
         <img
-          className='logo-img w-44 mx-auto md:mx-0'
+          className='logo-img w-44 mx-auto md:mx-0 '
           src={netflixlogo}
           alt='logo'
         />
       </div>
       
       {user && (
-        <div className='flex gap-1 items-center'>
+        <div className='flex gap-1 items-center justify-between'>
           {showGtpSearch && (<select className='p-1 bg-slate-500 text-white'  onChange={handleLangChange}>
             {SUPPORTED_LAN.map((lang) => (
             <option key={lang.identifier}  value={lang.identifier}>
@@ -78,7 +78,7 @@ const Header = () => {
           </button>
 
           <img
-            className='w-12 h-12 m-1'
+            className='hidden md:inline-block  w-12 h-12 m-1'
             src={user?.photoURL}
           />
           <button
