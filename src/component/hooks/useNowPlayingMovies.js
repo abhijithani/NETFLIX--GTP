@@ -2,10 +2,10 @@ import { API_OPTIONS } from "../../utilis/private";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addNowPlayingMovies } from "../../utilis/movieSlice";
-
+import { useSelector } from "react-redux";
 const useNowPlayingMovies = () => {
     //fetch data form TMDB API and updated store
-
+    const nowPlaying =  useSelector(store => store.movies.addNowPlayingMovies)
     const dispatch = useDispatch();
 
     const getNowPlaying = async () => {
@@ -17,7 +17,7 @@ const useNowPlayingMovies = () => {
     }
 
     useEffect(() => {
-        getNowPlaying();
+        !nowPlaying && getNowPlaying(); 
     },[]);
 };
 

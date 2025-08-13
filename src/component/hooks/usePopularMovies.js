@@ -2,10 +2,10 @@ import { API_OPTIONS } from "../../utilis/private";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addPopularMovies } from "../../utilis/movieSlice";
-
+import { useSelector } from "react-redux";
 const usePopularMovies = () => {
     //fetch data form TMDB API and updated store
-
+    const popular =  useSelector(store => store.movies.addNowPlayingMovies)
     const dispatch = useDispatch();
 
     const PopularMovies = async () => {
@@ -17,7 +17,7 @@ const usePopularMovies = () => {
     };
 
     useEffect(() => {
-        PopularMovies();
+        !popular && PopularMovies();
     },[]);
 };
 
