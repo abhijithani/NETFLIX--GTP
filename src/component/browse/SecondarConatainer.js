@@ -9,7 +9,7 @@ const Secondarconatainer = () => {
   console.log(movies);
   
   return (
-    <div className="bg-black">
+    <div className="bg-black w-screen aspect-video">
       <div className="mt-0 md:-mt-52 pl-4 md:pl-12 relative z-10">
       <MovieList title={"Now playing"} movies ={movies?.addNowPlayingMovies}/>
       <MovieList title={"Upcoming Movies"} movies ={movies?.addPopularMovies}/>
