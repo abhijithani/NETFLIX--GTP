@@ -1,4 +1,4 @@
-import { API_OPTIONS } from "../../utilis/private";
+import { API_OPTIONS } from "../../utilis/constants";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addPopularMovies } from "../../utilis/movieSlice";

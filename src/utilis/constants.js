@@ -11,3 +11,16 @@ export const SUPPORTED_LAN = [
     {identifier : "hn" , name :"Hindi"},
     {identifier : "mal" , name :"Malayalam"},
 ];
+
+export const API_OPTIONS = {
+   method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: "Bearer "+ process.env.REACT_APP_TMDB_KEY,
+  }
+};
+
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY
+
+
+export const GEMINI_API = process.env.REACT_APP_GEMINI_KEY

@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import lang from '../../utilis/languagesConstants'
 import ai from '../../utilis/geminAI'
-import { API_OPTIONS } from '../../utilis/private'
+import { API_OPTIONS } from '../../utilis/constants'
 import { addGtpMovieResults } from '../../utilis/gtpSlice'
 
 
