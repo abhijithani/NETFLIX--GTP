@@ -4,13 +4,11 @@ import { useState } from 'react';
 import { checkvalidation } from '../utilis/validate';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../utilis/firebase';
-import { useNavigate } from 'react-router-dom';
 import { BG_URL, profileicon } from '../utilis/constants';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utilis/userslice';
 
 const Login = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [isSignInForm, setSignInForm] = useState(true);
@@ -81,7 +79,6 @@ const Login = () => {
           // Signed in 
           const user = userCredential.user;
           console.log(user);
-          navigate("/browse");
 
         })
         .catch((error) => {
