@@ -5,6 +5,7 @@ import ai from '../../utilis/geminAI'
 import { API_OPTIONS } from '../../utilis/constants'
 import { addGtpMovieResults } from '../../utilis/gtpSlice'
 
+const MOVIE_SUGGESTION_LIMIT = 7;
 
 const GtpSearchBar = () => {
 
@@ -13,12 +14,18 @@ const GtpSearchBar = () => {
   const langKey = useSelector((store) => store.config.lang);
 
   const SearchMovieTMDB = async (movie) => {
-    const data = await fetch('https://api.themoviedb.org/3/search/movie?query=' +
-      movie +
-      '&include_adult=false&language=en-US&page=1', API_OPTIONS);
-    const json = await data.json();
+    try {
+      const data = await fetch('https://api.themoviedb.org/3/search/movie?query=' +
+        movie +
+        '&include_adult=false&language=en-US&page=1', API_OPTIONS);
+      const json = await data.json();
 
-    return json.results;
+      return json.results;
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
+
   }
 
   const handleGptSearchClicl = async () => {
@@ -27,7 +34,7 @@ const GtpSearchBar = () => {
 
     const gptQuery = "Act as an Movies recommendation system and sugges some movies for the query :" +
       searchText.current.value +
-      ". Only give me names of 5 movies, comma seperated like the example given only the name of the movie should in answer- vettam, Godfather ,parakumThalikka ,intersetllar, avesham"
+      `. Only give me names of ${MOVIE_SUGGESTION_LIMIT} movies, comma seperated like the example given only the name of the movie should in answer- vettam, Godfather ,parakumThalikka ,intersetllar, avesham`
 
     const response = await ai.models.generateContent({
       model: 'gemini-2.0-flash-001',

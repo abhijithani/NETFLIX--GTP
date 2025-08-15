@@ -7,16 +7,22 @@ const MovieList = ({ title, movies }) => {
     // console.log(movies);
     // console.log(movies[1]);
 
-    return (
-        <div className="px-6">
-            <h1 className="text-lg md:text-3xl py-4 text-white">{title}</h1>
-            <div className="flex overflow-x-scroll scrollbar-hide">
-                <div className="flex">
-                    {movies.map(movies => <MovieCard key={movies.id} posterPath={movies.poster_path} />)}
+    const urlTitle = title.split(' ').join('+');
+    const URL = `https://www.google.com/search?q=${urlTitle}`;
 
+
+    return (
+        <a href={URL} rel="noreferrer" target="_blank">
+            <div className="px-6">
+                <h1 className="text-lg md:text-3xl py-4 text-white">{title}</h1>
+                <div className="flex overflow-x-scroll scrollbar-hide">
+                    <div className="flex">
+                        {movies.map(movies => <MovieCard key={movies.id} posterPath={movies.poster_path} />)}
+
+                    </div>
                 </div>
             </div>
-        </div>
+        </a>
     )
 };
 export default MovieList;
