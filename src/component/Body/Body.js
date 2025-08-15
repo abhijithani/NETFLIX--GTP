@@ -1,12 +1,11 @@
 import Login from '../Login'
 import Browse from '../browse/Browse'
 import './body.module.css'
-import { createBrowserRouter, RouterProvider} from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 
 const Body = () => {
-    
-    
+
     const appRouter = createBrowserRouter([
         {
             path: "/",
@@ -26,4 +25,3 @@ const Body = () => {
 }
 
 export default Body
- 

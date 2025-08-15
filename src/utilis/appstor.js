@@ -5,11 +5,11 @@ import gtpReducer from "./gtpSlice";
 import configReducer from "./configSlice"
 
 const appStore = configureStore({
-    reducer:{
+    reducer: {
         user: userReducer,
         movies: moviesReducer,
         gtp: gtpReducer,
-        config:configReducer,
+        config: configReducer,
     },
 })
 

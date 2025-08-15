@@ -49,19 +49,19 @@ const Login = () => {
             photoURL: profileicon,
 
           })
-          .then(() => {
-            const { uid, email, displayName, photoURL } = auth.currentUser;
-            dispatch(
-              addUser({
-                uid: uid,
-                email: email,
-                displayName: displayName,
-                photoURL: photoURL,
-              })
-            )
-          }).catch((error) => {
-            setErrormessage(error.message)
-          });
+            .then(() => {
+              const { uid, email, displayName, photoURL } = auth.currentUser;
+              dispatch(
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                  photoURL: photoURL,
+                })
+              )
+            }).catch((error) => {
+              setErrormessage(error.message)
+            });
 
         })
         .catch((error) => {
@@ -95,7 +95,7 @@ const Login = () => {
       <div className='bg-img absolute'>
         <img
           className='object-cover h-screen md:h-auto'
-          src={BG_URL}  
+          src={BG_URL}
           alt="background"
         />
       </div>

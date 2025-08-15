@@ -16,9 +16,9 @@ const GtpSearchBar = () => {
     const data = await fetch('https://api.themoviedb.org/3/search/movie?query=' +
       movie +
       '&include_adult=false&language=en-US&page=1', API_OPTIONS);
-      const json = await data.json();
+    const json = await data.json();
 
-      return json.results;
+    return json.results;
   }
 
   const handleGptSearchClicl = async () => {
@@ -33,7 +33,7 @@ const GtpSearchBar = () => {
       model: 'gemini-2.0-flash-001',
       contents: gptQuery,
     });
-    
+
     const gptMoviseArray = response?.candidates[0]?.content?.parts[0]?.text.split(",");
     console.log(gptMoviseArray);
 
@@ -41,7 +41,7 @@ const GtpSearchBar = () => {
 
     const tmdbResults = await Promise.all(promiseArray);
 
-    dispatch(addGtpMovieResults({movieNames: gptMoviseArray,  movieResults:tmdbResults}))
+    dispatch(addGtpMovieResults({ movieNames: gptMoviseArray, movieResults: tmdbResults }))
 
   }
 

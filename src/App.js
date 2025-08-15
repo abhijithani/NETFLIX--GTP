@@ -7,7 +7,7 @@ import appStore from './utilis/appstor';
 function App() {
   return (
     <Provider store={appStore}>
-      <Body/>
+      <Body />
     </Provider>
 
   );
